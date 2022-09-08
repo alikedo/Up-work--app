@@ -3,7 +3,7 @@ const router = require("express").Router();
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.json("All good in here");
+  res.json("It's all good");
 });
 
 //router.use("/auth", authRoutes);
