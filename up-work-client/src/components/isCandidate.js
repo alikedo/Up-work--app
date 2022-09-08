@@ -9,7 +9,7 @@ function isCandidate({ children }) {
  
     if (!isLoggedIn) {
 
-      return <Navigate to="/login" />;
+      return <Navigate to="/logincand" />;
     } else if(user.userType!=='candidate'){
         return <Navigate to="/" />;
     }else {

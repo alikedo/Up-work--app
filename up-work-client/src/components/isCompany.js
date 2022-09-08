@@ -9,7 +9,7 @@ function isCompany({ children } ) {
  
     if (!isLoggedIn) {
 
-      return <Navigate to="/login" />;
+      return <Navigate to="/logincomp" />;
     } else if(user.userType!=='company'){
         return <Navigate to="/" />;
     }else {
