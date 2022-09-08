@@ -4,7 +4,7 @@ import "../App.css";
 function HomePage() {
   return (
     <div className="App">
-      <h1>Upwork</h1>
+      <h1>Jobsomely</h1>
       <Link to='/jobs'>Jobs</Link>
     </div>
   );
