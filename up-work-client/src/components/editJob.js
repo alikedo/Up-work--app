@@ -1,9 +1,9 @@
 import React from 'react'
 
-function AddJobs() {
+function editJob() {
   return (
     <div>
-        <h1>Add Job</h1>
+        <h1>Edit Job</h1>
         <label>Title</label>
         <input type='text'/>
 
@@ -12,9 +12,9 @@ function AddJobs() {
 
         <label>Contact: </label>
         <input type='text'/>
-        <button type="submit">Add Job</button>
+        <button type="submit">Edit Job</button>
     </div>
   )
 }
 
-export default AddJobs
+export default editJob
