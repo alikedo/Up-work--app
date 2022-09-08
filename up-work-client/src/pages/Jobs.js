@@ -25,15 +25,20 @@ const updateJobList = (searchInput) => {
   return (
     <div>
       <h1>List of Jobs</h1>
-      {joblist.map( e=> {
+      <label>Search</label>
+      <input value={search} type="text" onChange={(event) => {setSearch(event.target.value)}} />
+      {/* {joblist.map( e=> {
         return (
       <div>
         <p>title</p>
+        <p>Company</p>
         <p>Description</p>
+        <p>Skills</p>
+        <p>Level</p>
         <p>Contact</p>
       </div>
       )}
-      )}
+      )} */}
     </div>
   )
 }
