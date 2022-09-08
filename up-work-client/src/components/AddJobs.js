@@ -16,7 +16,10 @@ function AddJobs(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const requestBody = { title, description, skills, level };
+    setCompany('?');
+    setOwner('?');
+
+    const requestBody = { title, company, description, skills, level, owner };
     
     const storedToken = localStorage.getItem('authToken');
  
