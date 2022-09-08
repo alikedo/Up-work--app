@@ -7,6 +7,9 @@ import SignupComp from "./pages/SignupComp";
 import LoginCand from "./pages/LoginCand";
 import LoginComp from "./pages/LoginComp";
 import Jobs from "./pages/Jobs";
+import Profile from "./pages/profile";
+import Company from "./pages/company";
+import EditProfile from "./components/editProfile";
 
 function App() {
   return (
@@ -18,7 +21,10 @@ function App() {
           <Route path='/signupcomp' element={<SignupComp/>} />
           <Route path='/logincand'  element={<LoginCand/>} />
           <Route path='/logincomp'  element={<LoginComp/>} />
+          <Route path='/profile' element={<Profile/>} />
+          <Route path='/company' element={<Company/>} />
           <Route path='/jobs'  element={<Jobs/>} />
+          <Route path='/editProfile/:id'  element={<EditProfile/>} />
       </Routes>
     </div>
   );
