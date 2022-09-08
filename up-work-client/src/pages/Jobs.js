@@ -1,8 +1,22 @@
-import React from 'react'
+import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
-function Jobs() {
+function Jobs(jobData) {
+  const [joblist, setNewjob] = useState(jobData)
+
   return (
-    <div>Jobs</div>
+    <div>
+      <h1>List of Jobs</h1>
+      {joblist.map( e=> {
+        return (
+      <div>
+        <p>title</p>
+        <p>Description</p>
+        <p>Contact</p>
+      </div>
+      )}
+      )}
+    </div>
   )
 }
 
