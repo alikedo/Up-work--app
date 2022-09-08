@@ -6,6 +6,7 @@ function company() {
         <h1>Company: </h1>
         <p>Description: </p>
         <p>Jobs Submitted:</p>
+        <p>Address:</p>
     </div>
   )
 }

@@ -43,7 +43,7 @@ function App() {
           <Route path='/editProfile/:id'  element={<EditProfile/>} />
           <Route path='/editCompany/:id'  element={<EditCompany/>} />
           <Route path='/addJobs/'  element={<AddJobs/>} />
-          <Route path='/editJob/:id'  element={<EditJob/>} />
+          <Route path='/editJob/:jobId'  element={<EditJob/>} />
       </Routes>
     </div>
   );
