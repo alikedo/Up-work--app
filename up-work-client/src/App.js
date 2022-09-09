@@ -1,5 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
@@ -17,6 +19,7 @@ import AddEditCompany from "./components/AddEditCompany";
 import AddJob from "./components/AddJob";
 import EditJobPage from "./pages/EditJobPage";
 
+const API_URL='http://localhost:5005/'
 
 function App() {
 
