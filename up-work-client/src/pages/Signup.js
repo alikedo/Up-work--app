@@ -62,6 +62,14 @@ function SignupCand(props) {
           value={name}
           onChange={handleName}
         />
+
+        <fieldset>
+          <legend>Type: </legend>
+          <input type="radio" name="userType" value="candidate"/>
+          <label>Candidate</label>
+          <input type="radio" name="userType" value="company"/>
+          <label>Company</label>
+        </fieldset>
  
         <button type="submit">Sign Up</button>
       </form>

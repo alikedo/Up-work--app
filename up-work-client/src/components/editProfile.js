@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import service from "../api/service";
 
 const API_URL = "http://localhost:5005";
 
@@ -16,6 +17,7 @@ function EditProfile() {
     const[skills, setskills] = useState('');
     const[image, setimage] = useState('');
     const[linkedin, setlinkedin] = useState('');
+
 
     const {id} =useParams();
     const navigate = useNavigate();
@@ -54,6 +56,20 @@ function EditProfile() {
           });
       };
 
+      const handleFileUpload = (e) => {
+     
+        const uploadData = new FormData();
+
+        uploadData.append("image", e.target.files[0]);
+     
+        service
+          .uploadImage(uploadData)
+          .then(response => {
+            setimage(response.fileUrl);
+          })
+          .catch(err => console.log("Error while uploading the file: ", err));
+      };
+
   return (
     <div>
         <h1>Edit Profile</h1>
@@ -82,11 +98,10 @@ function EditProfile() {
             <label>About</label>
             <input type="text" name="about" value={about} onChange={(e) => setskills(e.target.value)} />
 
-            <label>Image</label>
-            <input type="text" name="about" value={about} onChange={(e) => setimage(e.target.value)} />
-
             <label>Linkedin</label>
             <input type="url" name="linkedin" value={linkedin} onChange={(e) => setlinkedin(e.target.value)} />
+
+            <input type="file" onChange={(e) => handleFileUpload(e)} />
 
             <button type="submit">Update</button>
         </form>

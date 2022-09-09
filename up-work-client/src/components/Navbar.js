@@ -9,7 +9,7 @@ function Navbar() {
   
 
   return (
-    <nav class="navbar navbar-expand-sm">
+    <nav>
         
       <NavLink to="/">
         Home
@@ -27,24 +27,10 @@ function Navbar() {
  
       {!isLoggedIn && (
         <>
-        <div class="collapse navbar-collapse justify-content-center">
-        <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-        <p class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sign Up</p>
-        <div class="dropdown-menu">
-            <NavLink to="/signupcand" class="dropdown-item">Candidate</NavLink><br></br>
-            <NavLink to="/signupcomp" class="dropdown-item">Company</NavLink>
+        <div>
+            <NavLink to="/signup" style={{marginRight: '20px'}}>Sign Up</NavLink>
+            <NavLink to="/login">Login</NavLink>
         </div>
-        </li>
-        <li class="nav-item dropdown">
-        <p class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Log In</p>
-          <div class="dropdown-menu">
-            <NavLink to="/logincand" class="dropdown-item">Candidate</NavLink><br></br>
-            <NavLink to="/logincomp" class="dropdown-item">Company</NavLink>
-          </div>
-          </li>
-          </ul>
-          </div>
         </>
       )}
     </nav>

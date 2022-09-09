@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Homepage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
-import SignupCand from "./pages/SignupCand";
-import SignupComp from "./pages/SignupComp";
-import LoginCand from "./pages/LoginCand";
-import LoginComp from "./pages/LoginComp";
+import Signup from "./pages/Signup";
+
+import Login from "./pages/Login";
+
 import Jobs from "./pages/Jobs";
 import Profile from "./pages/profile";
 import Company from "./pages/company";
@@ -33,10 +33,10 @@ function App() {
       <Navbar/>
       <Routes>
           <Route path='/' element={<Homepage/>} />
-          <Route path='/signupcand' element={<SignupCand/>} />
-          <Route path='/signupcomp' element={<SignupComp/>} />
-          <Route path='/logincand'  element={<LoginCand/>} />
-          <Route path='/logincomp'  element={<LoginComp/>} />
+          <Route path='/signup' element={<Signup/>} />
+
+          <Route path='/login'  element={<Login/>} />
+
           <Route path='/profile/:id' element={<Profile/>} />
           <Route path='/company' element={<Company/>} />
           <Route path='/jobs'  element={<Jobs jobData={jobList}/>} />
