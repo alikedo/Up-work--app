@@ -5,7 +5,7 @@ import axios from "axios";
 const API_URL = "http://localhost:5005";
  
  
-function SignupCand(props) {
+function Signup(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -62,6 +62,14 @@ function SignupCand(props) {
           value={name}
           onChange={handleName}
         />
+
+        <fieldset>
+          <legend>Type: </legend>
+          <input type="radio" name="userType" value="candidate"/>
+          <label>Candidate</label>
+          <input type="radio" name="userType" value="company"/>
+          <label>Company</label>
+        </fieldset>
  
         <button type="submit">Sign Up</button>
       </form>
@@ -74,4 +82,4 @@ function SignupCand(props) {
   )
 }
  
-export default SignupCand;
+export default Signup;

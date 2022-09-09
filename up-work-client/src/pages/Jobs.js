@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 function Jobs(jobData) {
   const [search, setSearch] = useState("");
-  const [joblist, setNewjob] = useState(jobData)
+  const [joblist, setNewjob] = useState([])
 
   useEffect(()=>{
     updateJobList(search);
@@ -25,12 +25,17 @@ const updateJobList = (searchInput) => {
   return (
     <div>
       <h1>List of Jobs</h1>
-      {joblist.map( e=> {
+      <label>Search</label>
+      <input value={search} type="text" onChange={(event) => {setSearch(event.target.value)}} />
+      {joblist.map( () => {
         return (
       <div>
-        <p>title</p>
-        <p>Description</p>
-        <p>Contact</p>
+        <p>title: </p>
+        <p>Company: </p>
+        <p>Description: </p>
+        <p>Skills: </p>
+        <p>Level: </p>
+
       </div>
       )}
       )}

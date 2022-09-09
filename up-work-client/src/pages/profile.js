@@ -4,9 +4,9 @@ function profile() {
   return (
     <div>
         <h1>Profile</h1>
-        <NavLink to='/profile-edit/:id'>Edit Profile</NavLink>
+        <NavLink to='/editprofile/:id'>Edit Profile</NavLink>
         <img src="" />
-        <p>Full Name:</p>
+        <p>Name:</p>
         <p>Birthday:</p>
         <p>Country:</p>
         <p>Education:</p>

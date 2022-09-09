@@ -24,6 +24,7 @@ function App() {
     <div className="App d-flex flex-column min-vh-100">
       <NavBar />
       <Routes>
+
         <Route path="/" element={<HomePage />} />
         <Route path="/jobs" element={<JobsListPage />} />
         <Route path="/jobs/:jobId" element={<JobDetailsPage />} />
@@ -37,6 +38,7 @@ function App() {
         <Route path="/mycompany" element={<AddEditCompany />} />
         <Route path="/jobs/create" element={<AddJob />} />
         <Route path="/jobs/edit/:jobId" element={<EditJobPage />} />
+
       </Routes>
       <Footer />
     </div>
