@@ -22,11 +22,11 @@ function App() {
   const [jobList, setjobList] = useState([]);
   
 
-  const getAllJobs = () => {
+  const getAllJobs = async () => {
     const storedToken = localStorage.getItem("authToken");
  
 
-  axios
+  await axios
     .get(
     `${API_URL}/api/jobs`,
     { headers: { Authorization: `Bearer ${storedToken}` } }

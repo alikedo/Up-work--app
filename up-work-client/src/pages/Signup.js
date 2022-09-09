@@ -23,9 +23,9 @@ function Signup(props) {
 
     const requestBody = { email, password, name };
 
-    axios.post(`${API_URL}/auth/signupcand`, requestBody)
+    axios.post(`${API_URL}/auth/signup`, requestBody)
       .then((response) => {
-        navigate('/logincand');
+        navigate('/login');
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -77,7 +77,7 @@ function Signup(props) {
       { errorMessage && <p className="error-message">{errorMessage}</p> }
  
       <p>Already have account?</p>
-      <Link to={"/logincand"}> Login</Link>
+      <Link to={"/login"}> Login</Link>
     </div>
   )
 }
