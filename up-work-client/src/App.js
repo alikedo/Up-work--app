@@ -20,7 +20,6 @@ import EditJobPage from "./pages/EditJobPage";
 
 function App() {
 
-<<<<<<< HEAD
   const [jobList, setjobList] = useState([]);
   
 
@@ -41,8 +40,6 @@ function App() {
     getAllJobs();
   }, [] );
 
-=======
->>>>>>> da66c7c52b6af1e1fe459c70026f9260a692515a
   return (
     <div className="App d-flex flex-column min-vh-100">
       <NavBar />
