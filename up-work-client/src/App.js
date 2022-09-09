@@ -1,37 +1,44 @@
-import React from "react";
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Homepage from "./pages/HomePage";
-import Navbar from "./components/Navbar";
-import SignupCand from "./pages/SignupCand";
-import SignupComp from "./pages/SignupComp";
-import LoginCand from "./pages/LoginCand";
-import LoginComp from "./pages/LoginComp";
-import Jobs from "./pages/Jobs";
-import Profile from "./pages/profile";
-import Company from "./pages/company";
-import EditProfile from "./components/editProfile";
-import EditCompany from "./components/editCompany";
-import AddJobs from "./components/AddJobs";
-import EditJob from "./components/editJob";
+
+import NavBar from "./components/NavBar";
+import HomePage from "./pages/HomePage";
+import Footer from "./components/Footer";
+import JobsListPage from "./pages/JobsListPage";
+import JobDetailsPage from "./pages/JobDetailsPage";
+import CompaniesListPage from "./pages/CompaniesList";
+import CompanyDetailsPage from "./pages/CompanyDetails";
+import CandidatesListPage from "./pages/CandidatesListPage";
+import CandidateDetailsPage from "./pages/CandidateDetails";
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
+import AddEditCandidate from "./components/AddEditCandidate";
+import AddEditCompany from "./components/AddEditCompany";
+import AddJob from "./components/AddJob";
+import EditJobPage from "./pages/EditJobPage";
+
 
 function App() {
+
   return (
-    <div className="App">
-      <Navbar/>
+    <div className="App d-flex flex-column min-vh-100">
+      <NavBar />
       <Routes>
-          <Route path='/' element={<Homepage/>} />
-          <Route path='/signupcand' element={<SignupCand/>} />
-          <Route path='/signupcomp' element={<SignupComp/>} />
-          <Route path='/logincand'  element={<LoginCand/>} />
-          <Route path='/logincomp'  element={<LoginComp/>} />
-          <Route path='/profile' element={<Profile/>} />
-          <Route path='/company' element={<Company/>} />
-          <Route path='/jobs'  element={<Jobs/>} />
-          <Route path='/editProfile/:id'  element={<EditProfile/>} />
-          <Route path='/editCompany/:id'  element={<EditCompany/>} />
-          <Route path='/addJobs/'  element={<AddJobs/>} />
-          <Route path='/editJob/:id'  element={<EditJob/>} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/jobs" element={<JobsListPage />} />
+        <Route path="/jobs/:jobId" element={<JobDetailsPage />} />
+        <Route path="/companies" element={<CompaniesListPage />} />
+        <Route path="/companies/:companyId" element={<CompanyDetailsPage />} />
+        <Route path="/candidates" element={<CandidatesListPage />} />
+        <Route path="/candidates/:candidateId" element={<CandidateDetailsPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/myprofile" element={<AddEditCandidate />} />
+        <Route path="/mycompany" element={<AddEditCompany />} />
+        <Route path="/jobs/create" element={<AddJob />} />
+        <Route path="/jobs/edit/:jobId" element={<EditJobPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
