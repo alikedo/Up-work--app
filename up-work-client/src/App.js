@@ -20,6 +20,29 @@ import EditJobPage from "./pages/EditJobPage";
 
 function App() {
 
+<<<<<<< HEAD
+  const [jobList, setjobList] = useState([]);
+  
+
+  const getAllJobs = async () => {
+    const storedToken = localStorage.getItem("authToken");
+ 
+
+  await axios
+    .get(
+    `${API_URL}/api/jobs`,
+    { headers: { Authorization: `Bearer ${storedToken}` } }
+  )
+    .then((response) => setjobList(response.data))
+    .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    getAllJobs();
+  }, [] );
+
+=======
+>>>>>>> da66c7c52b6af1e1fe459c70026f9260a692515a
   return (
     <div className="App d-flex flex-column min-vh-100">
       <NavBar />
