@@ -15,18 +15,29 @@ import AddJobs from "./components/AddJobs";
 import EditJob from "./components/editJob";
 import axios from 'axios';
 
+const API_URL = "http://localhost:5005";
+
 function App() {
 
   const [jobList, setjobList] = useState([]);
+  
 
-  const apiURL='http://localhost:5005/api/jobs'
+  const getAllJobs = () => {
+    const storedToken = localStorage.getItem("authToken");
+ 
 
-  useEffect( ()=> {
-     axios
-    .get(apiURL)
-    .then(responseFromAPI => {setjobList(responseFromAPI.data)})
-    .catch(err => console.log('Error while getting the data: ', err))}, 
-    []);
+  axios
+    .get(
+    `${API_URL}/api/jobs`,
+    { headers: { Authorization: `Bearer ${storedToken}` } }
+  )
+    .then((response) => setjobList(response.data))
+    .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    getAllJobs();
+  }, [] );
 
   return (
     <div className="App">

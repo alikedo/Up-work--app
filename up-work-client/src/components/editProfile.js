@@ -96,11 +96,12 @@ function EditProfile() {
             <input type="text" name="skills" value={skills} onChange={(e) => setabout(e.target.value)} />
 
             <label>About</label>
-            <input type="text" name="about" value={about} onChange={(e) => setskills(e.target.value)} />
+            <textarea type="text" name="about" value={about} onChange={(e) => setskills(e.target.value)} ></textarea>
 
             <label>Linkedin</label>
             <input type="url" name="linkedin" value={linkedin} onChange={(e) => setlinkedin(e.target.value)} />
 
+            <label>Image</label>
             <input type="file" onChange={(e) => handleFileUpload(e)} />
 
             <button type="submit">Update</button>
