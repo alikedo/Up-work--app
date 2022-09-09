@@ -1,61 +1,46 @@
-import React, { useState, useEffect } from "react";
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Homepage from "./pages/HomePage";
-import Navbar from "./components/Navbar";
-import Signup from "./pages/Signup";
 
-import Login from "./pages/Login";
+import NavBar from "./components/NavBar";
+import HomePage from "./pages/HomePage";
+import Footer from "./components/Footer";
+import JobsListPage from "./pages/JobsListPage";
+import JobDetailsPage from "./pages/JobDetailsPage";
+import CompaniesListPage from "./pages/CompaniesList";
+import CompanyDetailsPage from "./pages/CompanyDetails";
+import CandidatesListPage from "./pages/CandidatesListPage";
+import CandidateDetailsPage from "./pages/CandidateDetails";
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
+import AddEditCandidate from "./components/AddEditCandidate";
+import AddEditCompany from "./components/AddEditCompany";
+import AddJob from "./components/AddJob";
+import EditJobPage from "./pages/EditJobPage";
 
-import Jobs from "./pages/Jobs";
-import Profile from "./pages/profile";
-import Company from "./pages/company";
-import EditProfile from "./components/editProfile";
-import EditCompany from "./components/editCompany";
-import AddJobs from "./components/AddJobs";
-import EditJob from "./components/editJob";
-import axios from 'axios';
-
-const API_URL = "http://localhost:5005";
 
 function App() {
 
-  const [jobList, setjobList] = useState([]);
-  
-
-  const getAllJobs = () => {
-    const storedToken = localStorage.getItem("authToken");
- 
-
-  axios
-    .get(
-    `${API_URL}/api/jobs`,
-    { headers: { Authorization: `Bearer ${storedToken}` } }
-  )
-    .then((response) => setjobList(response.data))
-    .catch((error) => console.log(error));
-  };
-
-  useEffect(() => {
-    getAllJobs();
-  }, [] );
-
   return (
-    <div className="App">
-      <Navbar/>
+    <div className="App d-flex flex-column min-vh-100">
+      <NavBar />
       <Routes>
-          <Route path='/' element={<Homepage/>} />
-          <Route path='/signup' element={<Signup/>} />
 
-          <Route path='/login'  element={<Login/>} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/jobs" element={<JobsListPage />} />
+        <Route path="/jobs/:jobId" element={<JobDetailsPage />} />
+        <Route path="/companies" element={<CompaniesListPage />} />
+        <Route path="/companies/:companyId" element={<CompanyDetailsPage />} />
+        <Route path="/candidates" element={<CandidatesListPage />} />
+        <Route path="/candidates/:candidateId" element={<CandidateDetailsPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/myprofile" element={<AddEditCandidate />} />
+        <Route path="/mycompany" element={<AddEditCompany />} />
+        <Route path="/jobs/create" element={<AddJob />} />
+        <Route path="/jobs/edit/:jobId" element={<EditJobPage />} />
 
-          <Route path='/profile/:id' element={<Profile/>} />
-          <Route path='/company' element={<Company/>} />
-          <Route path='/jobs'  element={<Jobs jobData={jobList}/>} />
-          <Route path='/editProfile/:id'  element={<EditProfile/>} />
-          <Route path='/editCompany/:id'  element={<EditCompany/>} />
-          <Route path='/addJobs/'  element={<AddJobs/>} />
-          <Route path='/editJob/:jobId'  element={<EditJob/>} />
       </Routes>
+      <Footer />
     </div>
   );
 }
